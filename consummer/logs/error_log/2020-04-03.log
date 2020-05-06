@@ -1,0 +1,20 @@
+[2020-04-03 16:57:48.048] [com.alibaba.dubbo.common.logger.log4j.Log4jLogger] [DubboClientReconnectTimer-thread-2] [91] [ERROR]  [DUBBO] client reconnect to 192.168.1.105:20880 find error . url: dubbo://192.168.1.105:20880/com.self.learning.common.service.UserService?anyhost=true&application=dubbo-consumer&check=false&codec=dubbo&dubbo=2.0.1&generic=false&heartbeat=60000&interface=com.self.learning.common.service.UserService&methods=login&pid=11004&register.ip=192.168.1.105&remote.timestamp=1585891387359&side=consumer&timestamp=1585891413695, dubbo version: 2.0.1, current host: 192.168.1.105
+com.alibaba.dubbo.remoting.RemotingException: client(url: dubbo://192.168.1.105:20880/com.self.learning.common.service.UserService?anyhost=true&application=dubbo-consumer&check=false&codec=dubbo&dubbo=2.0.1&generic=false&heartbeat=60000&interface=com.self.learning.common.service.UserService&methods=login&pid=11004&register.ip=192.168.1.105&remote.timestamp=1585891387359&side=consumer&timestamp=1585891413695) failed to connect to server /192.168.1.105:20880, error message is:No route to host: no further information
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.doConnect(NettyClient.java:122)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:266)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient$1.run(AbstractClient.java:155)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset$$$capture(FutureTask.java:308)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.NoRouteToHostException: No route to host: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:717)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.connect(NioClientSocketPipelineSink.java:384)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.processSelectedKeys(NioClientSocketPipelineSink.java:354)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink$Boss.run(NioClientSocketPipelineSink.java:276)
+	... 3 common frames omitted
